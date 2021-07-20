@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import React, { useState } from "react";
 
-function App() {
+// the below function is called when we have a heavy computational task, and we want to only called the func only once
+// when component renders for the 1st time
+function expInState () {
+  return 10
+}
+
+const App = () => {
+  useState(() => expInState())
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>Hey {expInState}</div>
   );
 }
 
